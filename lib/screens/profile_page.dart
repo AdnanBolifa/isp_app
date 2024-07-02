@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:isp_app/constants.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key, required this.title});
-  final String title;
+  const ProfilePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,31 +36,30 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Center(
-              child: Card(
-                color: Colors.blue,
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+              child: Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(24.0),
+                child: const Center(
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         'Your Balance',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
                         ),
                       ),
-                      SizedBox(height: 10),
                       Text(
-                        '\$500.00', // Replace with actual balance data
+                        '\$500.00',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 22,
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
