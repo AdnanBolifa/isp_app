@@ -1,47 +1,80 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class ISPHomePage extends StatelessWidget {
+  const ISPHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             const Text(
-              'You have pushed the button this many times:',
+              'Welcome to ISP Home Page',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const SizedBox(height: 20),
+            Card(
+              color: Colors.grey[850],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.network_check, color: Colors.white),
+                title: Text(
+                  'Checked Network Status',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Network status was checked successfully',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Card(
+              color: Colors.grey[850],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.speed, color: Colors.white),
+                title: Text(
+                  'Speed Test',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Internet speed test was performed',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Card(
+              color: Colors.grey[850],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.security, color: Colors.white),
+                title: Text(
+                  'Security Check',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Security protocols were verified',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
